@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-- [Lesson 1](lesson01/README.md): Build env / tools and basic syntax
+- Lesson 1: [Build env / tools and basic syntax](lesson01/README.md)
 
 ## License
 

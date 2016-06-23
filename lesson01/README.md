@@ -12,7 +12,7 @@ First, be sure to have Node.js installed (v4.0 or greater recommended), along
 with npm (which generally comes bundled with Node). Recommended installation
 methods:
 
-- Via `brew`: `$ brew install node`
+- Via brew: `brew install node`
 - Download and install from the [official site](https://nodejs.org)
 
 Once Node.js is installed, run:
@@ -30,6 +30,7 @@ We'll use `pulp` to scaffold out a new project:
     $ cd /some/path
     $ mkdir purs-lesson1 && cd $_
     $ pulp init
+    $ bower install purescript-arrays --save
 
 This will output something along the lines of:
 
@@ -37,18 +38,31 @@ This will output something along the lines of:
 .
 ├── bower.json
 ├── bower_components/
+│   ├── purescript-arrays/
+│   ├── purescript-bifunctors/
 │   ├── purescript-console/
+│   ├── purescript-control/
 │   ├── purescript-eff/
-│   └── purescript-prelude/
+│   ├── purescript-foldable-traversable/
+│   ├── purescript-invariant/
+│   ├── purescript-maybe/
+│   ├── purescript-monoid/
+│   ├── purescript-partial/
+│   ├── purescript-prelude/
+│   ├── purescript-psci-support/
+│   ├── purescript-st/
+│   ├── purescript-tuples/
+│   └── purescript-unfoldable/
 ├── src/
 │   └── Main.purs
 └── test/
     └── Main.purs
 ```
 
-We won't be using any of these, but the important bit is the `bower.json` file,
-as well as the packages installed within `bower_components/`, particularly
-`purescript-prelude`, which will allow us to run the commands below.
+We won't be using the `src` or `test` files, but the important bits are in the
+`bower.json` file and packages installed within `bower_components/`,
+particularly `purescript-prelude` and some others, which will allow us to run
+the commands below.
 
 ## Start the PureScript REPL
 
@@ -65,31 +79,34 @@ Primitive data types correspond directly to their JavaScript counterparts at
 runtime.
 
 ```haskell
--- Numbers
+-- :: Number
 3.2
 
--- :type 3.2 ==> Number
-
--- Integers
+-- :: Int
 3
 
--- :type 3 ==> Int
-
--- Booleans
+-- :: Boolean
 true
 false
 
--- :type true ==> Boolean
+-- :: String
+"hello world" -- Double quotes only! Single quotes are reserved for the Char type
 
--- Strings
-"hello world" -- (single quotes are reserved for the Char type)
-
--- Chars
+-- :: Char
 'c'
 
--- :type 'c' ==> Char
-
 -- null and undefined DO NOT EXIST
+```
+
+### Logic
+
+```haskell
+not true --> false
+42 == 42 --> true
+42 /= 42 --> false (not equal)
+42 >= 42 --> true (comparisons: <, <=, >=, >)
+true && false --> false
+true || false --> true
 ```
 
 ### Arrays
@@ -97,12 +114,11 @@ false
 Arrays translate to JavaScript arrays, but MUST be homogeneous!
 
 ```haskell
--- Arrays
+-- :: Array Int
 [1, 2, 3, 5, 8]
-[true, true, false]
 
--- :type [1, 2, 3, 45] ==> Array Int
--- :type [true, false] ==> Array Boolean
+-- :: Array Boolean
+[true, true, false]
 ```
 
 ### Records
@@ -111,11 +127,88 @@ Records translate to JavaScript objects. They can have zero or more fields
 with heterogeneous values.
 
 ```haskell
--- Records
-let todo = { title: "Make lunch-n-learn lesson", completed: false }
-
--- :type todo
 -- { title :: String
 -- , completed :: Boolean
 -- }
+let todo = { title: "Make lunch-n-learn lesson"
+           , completed: false
+           }
+
+-- Property access
+todo.completed --> false
+```
+
+### Applying Functions
+
+- Almost everything (including operators!) is a function
+- To call a function, supply the function name and all parameters, separated by spaces
+- Functions are left-associative
+- All functions are curried
+- Use parens to nest calls as needed
+
+```haskell
+add 3 5 --> 8
+3 + 5 --> 8 (infix alias)
+
+sub 8 4 --> 4
+8 - 4 --> 4 (infix alias)
+
+mul 3 5 --> 15
+3 * 5 --> 15 (infix alias)
+
+negate 3 --> -3
+not true --> false
+
+-- Use backticks to make any function an infix function
+3 `add` 5 --> 8
+
+-- Use parens to use infix functions in prefix form
+(+) 3 5 --> 8
+
+add 1 (add 2 (add 3 4)) --> 10
+
+-- The $ operator can be used to avoid deep nesting:
+add 1 $ add 2 $ add 3 4 --> 10
+```
+
+### Defining Functions
+
+Exit `psci` with `^D` and restart it in multiline mode:
+
+    $ pulp psci -m
+    > import Prelude
+
+Notes:
+- In multiline mode, lines are terminated with `enter` followed by `^D`.
+- `let` in these examples is only needed in `psci`
+- Whitespace is significant
+
+```haskell
+let inc :: Int -> Int
+    inc x = x + 1
+
+inc 4 --> 5
+
+-- Same as inc, but leverages currying
+let inc' = add 1
+
+-- Function application has higher precedence than operators:
+inc 3 * inc 4 - inc 2 --> 17
+
+-- Conditional
+let abs :: Int -> Int
+    abs x = if x >= 0 then x else -x
+
+-- Guards
+let abs' :: Int -> Int
+    abs x | x >= 0    = x
+          | otherwise = -x
+
+-- Pattern matching (use underscore for unused placeholders)
+let isEmpty :: forall a. Array a -> Boolean
+    isEmpty [] = true
+    isEmpty _ = false
+
+-- Lambda expressions
+(\x y -> x*x + y*y) 4 5 --> 41
 ```
