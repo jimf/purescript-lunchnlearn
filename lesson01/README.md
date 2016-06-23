@@ -205,7 +205,7 @@ let abs :: Int -> Int
 -- Guards
 let abs' :: Int -> Int
     abs x | x >= 0    = x
-          | otherwise = -x
+        x | otherwise = -x
 
 -- Pattern matching (use underscore for unused placeholders)
 let isEmpty :: forall a. Array a -> Boolean
