@@ -6,7 +6,7 @@ PureScript REPL to dive into some basic syntax. For a much more complete
 reference to the syntax, see the
 [PureScript Language Guide](https://github.com/purescript/purescript/wiki/Language-Guide).
 
-[Slides](http://speakerdeck.com/jimf/purescript-lunchnlearn-lesson1)
+[Slides](https://speakerdeck.com/jimf/purescript-lunch-n-learn-lesson-1)
 
 ## Getting Started
 
