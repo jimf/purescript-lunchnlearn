@@ -70,7 +70,7 @@ Be sure to check it out for a more in-depth look of everything covered.
 
 - `where` keyword: used to define auxiliary names inside a function's scope
 - [`<<<`](https://github.com/purescript/purescript-prelude/blob/v0.1.5/docs/Prelude.md#-2): compose operator
-- [`>>>`](https://github.com/purescript/purescript-prelude/blob/v0.1.5/docs/Prelude.md#-2): pipe operator
+- [`>>>`](https://github.com/purescript/purescript-prelude/blob/v0.1.5/docs/Prelude.md#-3): pipe operator
 
 ### `Maybe`
 
