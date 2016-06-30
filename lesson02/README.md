@@ -88,7 +88,7 @@ Be sure to check it out for a more in-depth look of everything covered.
 - Comes from [purescript-lists](https://github.com/purescript/purescript-lists)
 - Full docs can be found on [Pursuit](https://pursuit.purescript.org/packages/purescript-lists)
 - We'll make use of:
-  - `Data.List.Cons`: cons (prepend) operation for linked lists
+  - [`Data.List.Cons`](https://github.com/purescript/purescript-lists/blob/v0.7.9/docs/Data/List.md#list): constructs a new list by prepending a value to a list
     - NOTE: the infix alias for `Cons` is `:`
   - [`Data.List.head`](https://github.com/purescript/purescript-lists/blob/v0.7.9/docs/Data/List.md#head): returns the first element in the linked list as a `Maybe`
   - [`Data.List.null`](https://github.com/purescript/purescript-lists/blob/v0.7.9/docs/Data/List.md#null): returns whether a linked list is empty
