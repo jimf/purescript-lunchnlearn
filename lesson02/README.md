@@ -64,7 +64,7 @@ Be sure to check it out for a more in-depth look of everything covered.
 
 - Quick introduction
 - `type` keyword to define a type
-- _<function name>_ followed by `::` to define a function signature using types
+- _functionName_ followed by `::` to define a function signature using types
 
 ### Operators
 
