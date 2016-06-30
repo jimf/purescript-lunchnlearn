@@ -1,6 +1,6 @@
-# Lesson 2: Functions and Records
+# Lesson 2: Records and Functions
 
-In this lession, we’ll start by taking a closer look at functions and records,
+In this lession, we’ll start by taking a closer look at records and functions,
 which make up the building blocks of interesting applications. We'll then spend
 the remainder of the time building upon what we've learned by working on
 constructing a simple address book program in a _dojo_ style format.
