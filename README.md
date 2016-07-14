@@ -2,7 +2,7 @@
 
 Materials for my [PureScript](http://www.purescript.org/) lunch-n-learn at
 work. Lessons are roughly 40 minutes long, each beginning with slides to cover
-concepts, followed by interactively solving problems related to the lesson.
+concepts, followed by interactive problem solving related to the lesson.
 
 The lesson plan follows and builds upon [PureScript by Example](https://leanpub.com/purescript/read).
 
