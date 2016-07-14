@@ -4,6 +4,9 @@ In this lesson we'll begin looking into how to use recursion for iteration and
 problem solving. We'll also look at the `map` function and how it relates to
 recursion, defining the term "functor" along the way.
 
+This lesson is built upon chapter 4 of [PureScript by Example](https://leanpub.com/purescript/read#leanpub-auto-recursion-maps-and-folds).
+Be sure to check it out for a more in-depth look of everything covered.
+
 [Slides](https://speakerdeck.com/jimf/purescript-lunch-n-learn-lesson-3)
 
 ## Getting Started
@@ -42,9 +45,6 @@ type. Check the links below for a quick refresher.
 - [Records and Functions: Maybe](https://github.com/jimf/purescript-lunchnlearn/tree/master/lesson02#maybe)
 
 ## What's New
-
-This lesson is built upon chapter 4 of [PureScript by Example](https://leanpub.com/purescript/read#leanpub-auto-recursion-maps-and-folds).
-Be sure to check it out for a more in-depth look of everything covered.
 
 ### `map`
 
