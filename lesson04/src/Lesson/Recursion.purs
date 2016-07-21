@@ -1,9 +1,9 @@
 module Lesson.Recursion where
 
 import Prelude
-import Control.MonadZero (guard)
-import Data.Array ((..), filter)
-import Data.Foldable (product)
+import Control.MonadZero
+import Data.Array
+import Data.Foldable
 
 
 -- Factors.
@@ -25,40 +25,16 @@ factors' n = do
 -- | Problems
 -- |
 
--- | 1. Write a function isEven that takes an Int and returns a Boolean
--- |    indicating whether the value is even.
--- |
--- |    HINT: The `mod` function will perform a modulus operation. Include
--- |    backticks to use inline.
+-- | 1. Write a function isPrime that takes an Int and returns a Boolean, by
+-- |    using our factors function to determine whether the input is prime.
 
 
--- | 2. Use pattern matching to write a boolToInt function that takes a
--- |    Boolean and returns 1 if true and 0 if false.
+-- | 2. Write a function xprod that takes two arrays of integers and uses do
+-- |    notation to return the cartesian product of those arrays (all possible
+-- |    pairs from the two lists).
 
 
--- | 3. Write a function defaultZero that takes a Maybe Int and, in the case
--- |    of Just a returns a, and in the case of Nothing, returns 0.
--- |
--- |    HINT: fromMaybe (from Data.Maybe) has the following signature:
--- |        fromMaybe :: forall a. a -> Maybe a -> a
--- |    That is, it takes a default value and a Maybe, and returns the Maybe
--- |    value if a Just, and otherwise the default given.
-
-
--- | 4. Write a function evalEvens that takes an array of integers and uses
--- |    map or <$> to return a new array whose values are the Ints 0 or 1,
--- |    depending on whether the corresponding value in the orginal array is
--- |    odd (0) or even (1).
-
-
--- | 5. Write a recursive function countEvens that takes an array of integers
--- |    (Array Int) and returns the number of even integers in the array.
--- |
--- |    HINTS:
--- |      - null from Data.Array will return whether an array is empty
--- |      - uncons from Data.Array will return a record of { head, tail }
--- |        - handy for pattern matching, case of, and the like:
--- |            f arr = case uncons arr of
--- |              Just { head: x, tail: xs } -> something
--- |              Nothing -> somethingElse
--- |      - our previous functions can be composed together with <<< as needed
+-- | 3. A pythagorean triple is an array of numbers [a, b, c] such that
+-- |    a² + b² = c². Write a function triples that takes an Integer and
+-- |    uses the guard function to calculate and return all Pythagorean
+-- |    triples whose components are less than n.

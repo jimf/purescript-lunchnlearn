@@ -29,7 +29,8 @@ Then clone this repository and change directories to this lesson:
     $ pulp psci
     > import Prelude
     > import Data.Array
-    > import Data.Maybe
+    > import Data.Foldable
+    > import Control.MonadZero
     > import Lesson.Recursion
 
 Take a look at the slides and [`src/Lesson/Recursion.purs`](src/Lesson/Recursion.purs)
@@ -55,3 +56,11 @@ and play around with code.
 ### `Data.Foldable`
 
 - Comes from purescript-foldable-traversable
+- `Data.Foldable.product` will reduce an array of Ints down to their product
+
+### `do` Notation
+
+- Powerful sugar that defines a block with a number of capabilities
+  - can assign names to expressions using `<-` or `let`
+  - can do filtering with the `guard` function (via `Control.ModadZero` from purescript-control)
+  - can leverage the type system by using the `pure` keyword
