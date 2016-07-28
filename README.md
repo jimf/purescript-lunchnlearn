@@ -12,6 +12,7 @@ The lesson plan follows and builds upon [PureScript by Example](https://leanpub.
 - Lesson 2: [Records and Functions](lesson02)
 - Lesson 3: [Recursion, Maps, & Folds (pt. 1)](lesson03)
 - Lesson 4: [Recursion, Maps, & Folds (pt. 2)](lesson04)
+- Lesson 5: [Recursion, Maps, & Folds (pt. 3)](lesson05)
 
 ## License
 
