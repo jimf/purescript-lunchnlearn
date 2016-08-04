@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>~/git/purescript-lunchnlearn/lesson06/src/Lesson/PatternMatching.purs.html</title>
+<meta name="Generator" content="Vim/7.4">
+<meta name="plugin-version" content="vim7.4_v1">
+<meta name="syntax" content="purescript">
+<meta name="settings" content="use_css,no_foldcolumn,expand_tabs,prevent_copy=">
+<meta name="colorscheme" content="ColorSchemeCreator">
+<style type="text/css">
+<!--
+pre { font-family: monospace; color: #111111; background-color: #ffffff; }
+body { font-family: monospace; color: #111111; background-color: #ffffff; }
+* { font-size: 1em; }
+.Constant { color: #cc0099; font-weight: bold; }
+.Operator { color: #cc0099; }
+.Statement { color: #3399ff; font-weight: bold; }
+.PreProc { color: #0066ff; }
+.Type { color: #6600cc; font-weight: bold; }
+.Special { color: #6600cc; }
+.Comment { color: #33cc99; font-style: italic; }
+-->
+</style>
+
+<script type='text/javascript'>
+<!--
+
+-->
+</script>
+</head>
+<body>
+<pre id='vimCodeElement'>
+<span class="Type">module</span> <span class="PreProc">Lesson</span><span class="Operator">.</span><span class="PreProc">PatternMatching</span> <span class="Type">where</span>
+
+<span class="Type">import</span> <span class="PreProc">Prelude</span>
+
+gcd <span class="Operator">::</span> <span class="PreProc">Int</span> <span class="Operator">-&gt;</span> <span class="PreProc">Int</span> <span class="Operator">-&gt;</span> <span class="PreProc">Int</span>
+gcd n <span class="Constant">0</span> <span class="Operator">=</span> n
+gcd <span class="Constant">0</span> m <span class="Operator">=</span> m
+gcd n m <span class="Operator">=</span> <span class="Statement">if</span> n <span class="Operator">&gt;</span> m
+          <span class="Statement">then</span> gcd <span class="Special">(</span>n <span class="Operator">-</span> m<span class="Special">)</span> m
+          <span class="Statement">else</span> gcd n <span class="Special">(</span>m <span class="Operator">-</span> n<span class="Special">)</span>
+
+<span class="Comment">-- gcd rewritten to use guards</span>
+gcd' <span class="Operator">::</span> <span class="PreProc">Int</span> <span class="Operator">-&gt;</span> <span class="PreProc">Int</span> <span class="Operator">-&gt;</span> <span class="PreProc">Int</span>
+gcd' n <span class="Constant">0</span> <span class="Operator">=</span> n
+gcd' <span class="Constant">0</span> m <span class="Operator">=</span> m
+gcd' n m <span class="Operator">|</span> n <span class="Operator">&gt;</span> m     <span class="Operator">=</span> gcd' <span class="Special">(</span>n <span class="Operator">-</span> m<span class="Special">)</span> m
+         <span class="Operator">|</span> otherwise <span class="Operator">=</span> gcd' n <span class="Special">(</span>m <span class="Operator">-</span> n<span class="Special">)</span>
+
+stringToBool <span class="Operator">::</span> <span class="PreProc">String</span> <span class="Operator">-&gt;</span> <span class="PreProc">Boolean</span>
+stringToBool <span class="Constant">&quot;true&quot;</span> <span class="Operator">=</span> true
+stringToBool <span class="Operator">_</span>      <span class="Operator">=</span> false
+
+boolToString <span class="Operator">::</span> <span class="PreProc">Boolean</span> <span class="Operator">-&gt;</span> <span class="PreProc">String</span>
+boolToString true  <span class="Operator">=</span> <span class="Constant">&quot;true&quot;</span>
+boolToString false <span class="Operator">=</span> <span class="Constant">&quot;false&quot;</span>
+
+isEmpty <span class="Operator">::</span> <span class="PreProc">Array</span> a <span class="Operator">-&gt;</span> <span class="PreProc">Boolean</span>
+isEmpty <span class="Special">[]</span> <span class="Operator">=</span> true
+isEmpty <span class="Operator">_</span>  <span class="Operator">=</span> false
+
+takeFive <span class="Operator">::</span> <span class="PreProc">Array</span> <span class="PreProc">Int</span> <span class="Operator">-&gt;</span> <span class="PreProc">Int</span>
+takeFive <span class="Special">[</span><span class="Constant">0</span><span class="Special">,</span> <span class="Constant">1</span><span class="Special">,</span> a<span class="Special">,</span> b<span class="Special">,</span> <span class="Operator">_</span><span class="Special">]</span> <span class="Operator">=</span> a <span class="Operator">*</span> b
+takeFive <span class="Operator">_</span> <span class="Operator">=</span> <span class="Constant">0</span>
+
+showPerson <span class="Operator">::</span> <span class="Special">{</span> first <span class="Operator">::</span> <span class="PreProc">String</span><span class="Special">,</span> last <span class="Operator">::</span> <span class="PreProc">String</span> <span class="Special">}</span> <span class="Operator">-&gt;</span> <span class="PreProc">String</span>
+showPerson <span class="Special">{</span> first<span class="Operator">:</span> x<span class="Special">,</span> last<span class="Operator">:</span> y <span class="Special">}</span> <span class="Operator">=</span> y <span class="Operator">&lt;&gt;</span> <span class="Constant">&quot;, &quot;</span> <span class="Operator">&lt;&gt;</span> x
+
+<span class="Type">type</span> <span class="PreProc">Address</span> <span class="Operator">=</span> <span class="Special">{</span> street <span class="Operator">::</span> <span class="PreProc">String</span><span class="Special">,</span> city <span class="Operator">::</span> <span class="PreProc">String</span> <span class="Special">}</span>
+
+<span class="Type">type</span> <span class="PreProc">Person</span> <span class="Operator">=</span> <span class="Special">{</span> name <span class="Operator">::</span> <span class="PreProc">String</span><span class="Special">,</span> address <span class="Operator">::</span> <span class="PreProc">Address</span> <span class="Special">}</span>
+
+livesInLA <span class="Operator">::</span> <span class="PreProc">Person</span> <span class="Operator">-&gt;</span> <span class="PreProc">Boolean</span>
+livesInLA <span class="Special">{</span> address<span class="Operator">:</span> <span class="Special">{</span> city<span class="Operator">:</span> <span class="Constant">&quot;Los Angeles&quot;</span> <span class="Special">}</span> <span class="Special">}</span> <span class="Operator">=</span> true
+livesInLA <span class="Operator">_</span> <span class="Operator">=</span> false
+
+sortPair <span class="Operator">::</span> <span class="PreProc">Array</span> <span class="PreProc">Int</span> <span class="Operator">-&gt;</span> <span class="PreProc">Array</span> <span class="PreProc">Int</span>
+sortPair arr<span class="Operator">@</span><span class="Special">[</span>x<span class="Special">,</span> y<span class="Special">]</span>
+  <span class="Operator">|</span> x <span class="Operator">&lt;=</span> y <span class="Operator">=</span> arr
+  <span class="Operator">|</span> otherwise <span class="Operator">=</span> <span class="Special">[</span>y<span class="Special">,</span> x<span class="Special">]</span>
+sortPair arr <span class="Operator">=</span> arr
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->
