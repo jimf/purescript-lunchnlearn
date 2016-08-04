@@ -6,7 +6,7 @@ and `do` notation.
 This lesson is built upon chapter 4 of [PureScript by Example](https://leanpub.com/purescript/read#leanpub-auto-recursion-maps-and-folds).
 Be sure to check it out for a more in-depth look of everything covered.
 
-[Slides](https://speakerdeck.com/jimf/purescript-lunch-n-learn-lesson-3)
+[Slides](https://speakerdeck.com/jimf/purescript-lunch-n-learn-lesson-4)
 
 ## Getting Started
 
