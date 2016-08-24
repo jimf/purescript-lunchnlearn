@@ -1,0 +1,17 @@
+{
+  "name": "lesson07",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "output"
+  ],
+  "dependencies": {
+    "purescript-console": "^1.0.0",
+    "purescript-arrays": "^1.1.0",
+    "purescript-strings": "^1.1.0"
+  },
+  "devDependencies": {
+    "purescript-psci-support": "^1.0.0"
+  }
+}
