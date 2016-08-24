@@ -24,7 +24,7 @@ Then clone this repository and change directories to this lesson:
 
     $ cd some/directory
     $ git clone https://github.com/jimf/purescript-lunchnlearn.git
-    $ cd purescript-lunchnlearn/lesson04
+    $ cd purescript-lunchnlearn/lesson06
     $ bower install
     $ pulp psci
     > import Prelude
