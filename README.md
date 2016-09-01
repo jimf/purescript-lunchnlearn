@@ -15,6 +15,7 @@ The lesson plan follows and builds upon [PureScript by Example](https://leanpub.
 - Lesson 5: [Recursion, Maps, & Folds (pt. 3)](lesson05)
 - Lesson 6: [Pattern Matching (pt. 1)](lesson06)
 - Lesson 7: [Pattern Matching (pt. 2)](lesson07)
+- Lesson 8: [Type Classes (pt. 1)](lesson08)
 
 ## License
 
