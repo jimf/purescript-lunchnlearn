@@ -22,10 +22,6 @@ data Action
 type State = Shape
 
 
-init :: Shape -> State
-init s = s
-
-
 update :: Action -> State -> State
 update (SetWidth ev) s = maybe s (flip setWidth $ s) (pixelFromString $ getValue ev)
 update (SetHeight ev) s = maybe s (flip setHeight $ s) (pixelFromString $ getValue ev)

@@ -45,7 +45,7 @@ Then clone this repository and change directories to this workshop:
     $ cd purescript-lunchnlearn/workshops/draggy
     $ npm install
     $ bower install
-    $ npm watch
+    $ npm run watch
     $ npm start # new shell
 
 Make updates to the files in `src` as per the instructions above. No tests
