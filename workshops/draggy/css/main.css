@@ -1,0 +1,60 @@
+@import url(https://fonts.googleapis.com/css?family=Oxygen);
+
+*, :before, :after {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body,
+input {
+  font: 300 18px/1.2 'Oxygen', sans-serif;
+}
+
+label span {
+  display: inline-block;
+  margin-right: 10px;
+  text-align: right;
+  width: 80px;
+}
+
+input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.4);
+  border-radius: 0;
+  color: #333;
+  display: inline-block;
+  font-size: 34px;
+  line-height: 44px;
+  padding: 5px 0;
+  width: 235px;
+}
+
+input:focus {
+  border-bottom-color: #000;
+  color: #000;
+  outline: none;
+}
+
+label {
+  color: #333;
+  display: block;
+  position: relative;
+  z-index: 9999;
+}
+
+.rectangle {
+  background-color: tomato;
+  position: absolute;
+}

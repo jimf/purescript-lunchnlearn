@@ -1,0 +1,21 @@
+{
+  "name": "draggy",
+  "version": "1.0.0",
+  "description": "A drag-n-drop workshop in Pux",
+  "private": true,
+  "main": "app.js",
+  "scripts": {
+    "build": "pulp browserify --to app.js",
+    "start": "live-server . --watch=app.js",
+    "watch": "pulp -w browserify --to app.js"
+  },
+  "author": "Jim Fitzpatrick <fitzpatrick.jim@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "latest"
+  },
+  "dependencies": {
+    "react": "^15.0.0",
+    "react-dom": "^15.0.0"
+  }
+}

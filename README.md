@@ -22,6 +22,7 @@ The lesson plan follows and builds upon [PureScript by Example](https://leanpub.
 ### Workshops
 
 - [Luhn Algorithm](workshops/luhn)
+- [Draggy](workshops/draggy)
 
 ## License
 
